@@ -13,17 +13,29 @@
             background: url("background.png") no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: relative;
         }
-        .button-container {
+        .download-row {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 20px;
         }
+        #row-android {
+            top: calc(100% * 5 / 7);
+        }
+        #row-ios {
+            top: calc(100% * 6 / 7);
+        }
+        .label {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
         .jump-button {
-            width: 200px;
+            width: 220px;
             height: 60px;
             background-image: url("bk1.png");
             background-size: cover;
@@ -31,20 +43,24 @@
             background-position: center;
             border: none;
             cursor: pointer;
-            font-size: 18px;
-            color: white;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="button-container">
+
+    <div class="download-row" id="row-android">
+        <span class="label">安卓下载</span>
         <a href="https://qiniu.miletang.cn/miletang_510_guangwang_510_jiagu_sign.apk">
-            <button class="jump-button">安卓下载</button>
-        </a>
-        <a href="https://www.guluapp.cn/wwAb">
-            <button class="jump-button">iOS下载</button>
+            <button class="jump-button"></button>
         </a>
     </div>
+
+    <div class="download-row" id="row-ios">
+        <span class="label">iOS下载</span>
+        <a href="https://www.guluapp.cn/wwAb">
+            <button class="jump-button"></button>
+        </a>
+    </div>
+
 </body>
 </html>
